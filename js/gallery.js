@@ -74,12 +74,12 @@ let arrayOfImages = images
   })
   .join('');
 
-listOfImages.innerHTML = arrayOfImages;
-
 const modal = document.createElement('div');
 const img = document.createElement('img');
 modal.append(img);
 const instance = basicLightbox.create(modal);
+
+listOfImages.innerHTML = arrayOfImages;
 
 listOfImages.addEventListener('click', event => {
   event.preventDefault();
