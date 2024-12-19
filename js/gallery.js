@@ -83,7 +83,6 @@ listOfImages.innerHTML = arrayOfImages;
 
 listOfImages.addEventListener('click', event => {
   event.preventDefault();
-  console.log('message');
   if (event.target !== event.currentTarget) {
     img.setAttribute('src', event.target.dataset.source);
     img.setAttribute('alt', event.target.alt);
