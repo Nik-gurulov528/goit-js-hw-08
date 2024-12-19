@@ -67,9 +67,6 @@ const images = [
 ];
 
 const listOfImages = document.querySelector('.gallery');
-
-let currentImage;
-
 let arrayOfImages = images
   .map(image => {
     let { preview, original, description } = image;
@@ -77,16 +74,17 @@ let arrayOfImages = images
   })
   .join('');
 
-listOfImages.innerHTML = arrayOfImages;
-
 const modal = document.createElement('div');
 const img = document.createElement('img');
 modal.append(img);
 const instance = basicLightbox.create(modal);
 
-listOfImages.addEventListener('click', (event, index) => {
+listOfImages.innerHTML = arrayOfImages;
+
+listOfImages.addEventListener('click', event => {
+  event.preventDefault();
+  console.log('message');
   if (event.target !== event.currentTarget) {
-    event.preventDefault();
     img.setAttribute('src', event.target.dataset.source);
     img.setAttribute('alt', event.target.alt);
     instance.show();
