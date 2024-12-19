@@ -84,7 +84,7 @@ const img = document.createElement('img');
 modal.append(img);
 const instance = basicLightbox.create(modal);
 
-listOfImages.addEventListener('click', event => {
+listOfImages.addEventListener('click', (event, index) => {
   event.preventDefault();
   if (event.target !== event.currentTarget) {
     img.setAttribute('src', event.target.dataset.source);
